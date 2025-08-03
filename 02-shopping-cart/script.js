@@ -5,4 +5,24 @@ const cart = [
   { name: "Pencil", price: 10, quantity: 5 }
 ];
 
-// Start coding here...
+const prices = cart.map(item => ({
+  name: item.name,
+  totalPrice: item.price * item.quantity
+}));
+prices.forEach(item => {
+  console.log(`${item.name} --- ₱${item.totalPrice}`);
+});
+
+console.log("------------------------------------------------------");
+
+const descriptions = cart.map(item => `${item.name} - ₱${item.price}`);
+descriptions.forEach(desc => {
+  console.log(desc);
+});
+
+console.log("------------------------------------------------------");
+
+const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+console.log(`The total price is: ₱${totalPrice}`);
+
+console.log("------------------------------------------------------");
