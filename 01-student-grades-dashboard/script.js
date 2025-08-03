@@ -14,7 +14,7 @@ console.log("Updated Names : " + upperCased);
 console.log("------------------------------------------------------");
 
 const grade85up = students.filter(student=>student.grade >= 85)
-console.log("The students that gt grades greater than 85 are : ");
+console.log("The students that have grades greater than or equal to 85 are : ");
 grade85up.forEach(student =>{
   console.log(student.name + " - " + student.grade);
 });
@@ -30,4 +30,11 @@ console.log("------------------------------------------------------");
 const displayStudents = ({name,grade}) => "Student : " + name + " - Grade : " + (grade ?? "No Grade");
 students.forEach(student=>{
   console.log(displayStudents(student));
+})
+
+console.log("------------------------------------------------------");
+
+const displayStudents2 = ({name,grade}) => "Student : " + name + " - Grade : " + (grade ?? "0");
+students.forEach(student=>{
+  console.log(displayStudents2(student));
 })
