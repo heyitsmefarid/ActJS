@@ -1,46 +1,50 @@
-// Starter data
+function log(message) {
+  console.log(message);
+  document.getElementById("output").innerHTML += message + "<br>";
+}
+
 const students = [
   { name: "Anna", grade: 92 },
   { name: "Ben", grade: 78 },
   { name: "Clara", grade: 88 },
   { name: "David", grade: 84 },
-  { name: "Ella" } // no grade, should use default
+  { name: "Ella" }
 ];
 
 const originalNames = students.map(student => student.name);
 const upperCased = students.map(student => student.name.toUpperCase());
 
-console.log(`Original Names: ${originalNames.join(", ")}`);
-console.log(`Updated Names: ${upperCased.join(", ")}`);
+log(`Original Names: ${originalNames.join(", ")}`);
+log(`Updated Names: ${upperCased.join(", ")}`);
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const grade85up = students.filter(student => (student.grade ?? 0) >= 85);
-console.log("The students that have grades greater than or equal to 85 are:");
+log("The students that have grades greater than or equal to 85 are:");
 grade85up.forEach(student => {
-  console.log(`${student.name} - ${student.grade}`);
+  log(`${student.name} - ${student.grade}`);
 });
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const totalGrades = students.reduce((sum, student) => sum + (student.grade ?? 0), 0);
 const average = totalGrades / students.length;
-console.log(`The average is: ${average}`);
+log(`The average is: ${average}`);
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const displayStudents = ({ name, grade }) => 
   `Student: ${name} - Grade: ${grade ?? "No Grade"}`;
 
 students.forEach(student => {
-  console.log(displayStudents(student));
+  log(displayStudents(student));
 });
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const displayStudents2 = ({ name, grade }) => 
   `Student: ${name} - Grade: ${grade ?? 0}`;
 
 students.forEach(student => {
-  console.log(displayStudents2(student));
+  log(displayStudents2(student));
 });

@@ -1,17 +1,22 @@
-// Starter examples (function output expectations are provided in README)
+function log(message) {
+  console.log(message);
+  document.getElementById("output").innerHTML += message + "<br>";
+}
 
 const makeMultiplier = (factor) => (num) => num * factor;
 
 const double = makeMultiplier(2);
-console.log(double(5)); 
-const triple = makeMultiplier(3);
-console.log(triple(4)); 
+log(double(5));
 
-console.log("------------------------------------------------------");
+const triple = makeMultiplier(3);
+log(triple(4));
+
+log("------------------------------------------------------");
 
 const makeGreeter = (greeting) => (name) => `${greeting}, ${name}!`;
 
 const sayHi = makeGreeter("Hi");
-console.log(sayHi("Mia"));   
+log(sayHi("Mia"));
+
 const sayHello = makeGreeter("Hello");
-console.log(sayHello("Fred")); 
+log(sayHello("Fred"));

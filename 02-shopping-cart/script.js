@@ -1,4 +1,8 @@
-// Starter data
+function log(message) {
+  console.log(message);
+  document.getElementById("output").innerHTML += message + "<br>";
+}
+
 const cart = [
   { name: "Pen", price: 20, quantity: 3 },
   { name: "Notebook", price: 50, quantity: 2 },
@@ -10,19 +14,19 @@ const prices = cart.map(item => ({
   totalPrice: item.price * item.quantity
 }));
 prices.forEach(item => {
-  console.log(`${item.name} --- ₱${item.totalPrice}`);
+  log(`${item.name} --- ₱${item.totalPrice}`);
 });
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const descriptions = cart.map(item => `${item.name} - ₱${item.price}`);
 descriptions.forEach(desc => {
-  console.log(desc);
+  log(desc);
 });
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
 
 const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-console.log(`The total price is: ₱${totalPrice}`);
+log(`The total price is: ₱${totalPrice}`);
 
-console.log("------------------------------------------------------");
+log("------------------------------------------------------");
